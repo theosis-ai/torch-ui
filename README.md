@@ -1,6 +1,6 @@
-# Torch UI
+# Torch Lab
 
 > [!NOTE]
-> Torch UI is in active development and is not yet ready for use.
+> Torch Lab is in active development and is not yet ready for use.
 
-Torch UI is a [NextJS](https://nextjs.org) application styled with [shadcn/ui](https://ui.shadcn.com) that is purpose built to interact with [Torch Stack](https://github.com/theosis-ai/torch-stack)
+Torch Lab is a [NextJS](https://nextjs.org) application that is purpose built for [torchtune](https://github.com/pytorch/torchtune).
