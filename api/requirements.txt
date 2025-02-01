@@ -1,0 +1,10 @@
+torch
+torchvision
+torchao
+torchtune
+python-dotenv
+fastapi
+uvicorn
+huggingface_hub[cli]
+transformers
+datasets
