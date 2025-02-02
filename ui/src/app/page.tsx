@@ -18,6 +18,11 @@ export default function Home() {
             {`shadcn/ui`} <ExternalLink height="12" width="12"/>
           </Link>
         </div>
+        <div className="flex gap-4">
+          <Link href="/sign-in" className="btn">
+            SignIn
+          </Link>
+        </div>
       </main>
     </div>
   );
