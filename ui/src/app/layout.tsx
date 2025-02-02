@@ -1,14 +1,15 @@
+import "./globals.css";
 import type { Metadata } from "next";
 import Link from "next/link";
+import { ExternalLink } from "lucide-react";
 import localFont from "next/font/local";
 import {
   ClerkProvider,
   SignInButton,
   SignedIn,
   SignedOut,
-  UserButton
-} from '@clerk/nextjs'
-import "./globals.css";
+  UserButton,
+} from "@clerk/nextjs";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -33,18 +34,51 @@ export default function RootLayout({
 }>) {
   return (
     <ClerkProvider>
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <div className="flex ml-8 mt-8">
-        <SignedIn>
-          <UserButton />
-        </SignedIn>
-        </div>
-        {children}
-      </body>
-    </html>
+      <html lang="en">
+        <body
+          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        >
+          <nav className="flex items-center justify-between p-8 mt-2">
+            <div className="flex gap-6">
+              <Link href="/">Home</Link>
+              <Link
+                className="items-center flex gap-1"
+                href="https://github.com/pytorch/torchtune"
+                target="_blank"
+              >
+                {`torchtune`} <ExternalLink height="12" width="12" />
+              </Link>
+              <Link
+                className="items-center flex gap-1"
+                href="https://github.com/vercel/next.js"
+                target="_blank"
+              >
+                {`nextjs`} <ExternalLink height="12" width="12" />
+              </Link>
+              <Link
+                className="items-center flex gap-1"
+                href="https://ui.shadcn.com"
+                target="_blank"
+              >
+                {`shadcn/ui`} <ExternalLink height="12" width="12" />
+              </Link>
+            </div>
+            <div className="flex">
+              <SignedIn>
+                <UserButton />
+              </SignedIn>
+              <SignedOut>
+                <SignInButton>
+                  <Link href="/sign-in" className="btn">
+                    Sign In / Sign Up
+                  </Link>
+                </SignInButton>
+              </SignedOut>
+            </div>
+          </nav>
+          {children}
+        </body>
+      </html>
     </ClerkProvider>
   );
 }
