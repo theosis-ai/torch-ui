@@ -2,7 +2,8 @@ import "./globals.css";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ExternalLink } from "lucide-react";
-import localFont from "next/font/local";
+import { GeistSans } from 'geist/font/sans';
+import { GeistMono } from 'geist/font/mono';
 import {
   ClerkProvider,
   SignInButton,
@@ -10,17 +11,6 @@ import {
   SignedOut,
   UserButton,
 } from "@clerk/nextjs";
-
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -36,9 +26,9 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en">
         <body
-          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+          className={`${GeistSans.variable} ${GeistMono.variable} antialiased`}
         >
-          <nav className="flex items-center justify-between p-8 mt-2">
+          <nav className="flex items-center justify-between mt-8 ml-12 mr-12 mb-4">
             <div className="flex gap-6">
               <Link href="/">Home</Link>
               <Link
