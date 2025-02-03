@@ -23,6 +23,9 @@ importers:
       '@neondatabase/serverless':
         specifier: ^0.10.4
         version: 0.10.4
+      '@next/env':
+        specifier: ^15.1.6
+        version: 15.1.6
       '@opentelemetry/api-logs':
         specifier: ^0.57.1
         version: 0.57.1
