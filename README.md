@@ -29,7 +29,6 @@ Tune Lab's roadmap includes creating specialized personas for Copilot to act as 
 - [FastAPI](https://fastapi.tiangolo.com): RESTful API
 - [NextJS](https://nextjs.org): React framework
 - [shadcn/ui](https://ui.shadcn.com): UI components
-- [Clerk](https://clerk.com): authentication and authorization
 
 ## Secondary Tooling
 
@@ -37,6 +36,7 @@ Tune Lab's roadmap includes creating specialized personas for Copilot to act as 
 - [Modal](https://modal.com): serverless compute
 - [Neon](https://neon.tech/home): serverless postgreSQL database
 - [Drizzle](https://orm.drizzle.team): database ORM
+- [Clerk](https://clerk.com): authentication and authorization
 - [LaunchDarkly](https://launchdarkly.com): feature flags
 - [Discord](https://discord.com): experiment notifications
 - [Copilot](https://github.com/features/copilot): AI pair programming
