@@ -7,7 +7,7 @@ Tune Lab is a [FastAPI](https://fastapi.tiangolo.com) + [NextJS](https://nextjs.
 
 ## TLDR
 
-Tune Lab contains two main components: a torchtune + modal + FastAPI backend and a NextJS frontend. The backend is responsible for running finetuning experiments, while the frontend allows users to quickly launch torchtune's in-built recipes from the convience of the browser.
+Tune Lab contains two main components: a torchtune + FastAPI backend and a NextJS frontend. The backend is responsible for running finetuning experiments, while the frontend allows users to quickly launch torchtune's in-built recipes from the convience of the browser.
 
 Why use a mono-repo? Tune Lab is designed to be a standalone application that can be deployed to a server and used to manage experiments. The mono-repo structure makes it easy to deploy the application as a single unit, and to use GitHub Copilot to generate code across the backend and frontend by allowing Copilot to index the entire codebase.
 
