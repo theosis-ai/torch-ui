@@ -31,6 +31,15 @@ export default function RootLayout({
           <nav className="flex items-center justify-between mt-8 ml-12 mr-12 mb-4">
             <div className="flex gap-6">
               <Link href="/">Home</Link>
+              <SignedIn>
+                <Link
+                  className="items-center flex gap-1"
+                  href="/lab"
+                  target="_blank"
+                >
+                Tune Lab
+                </Link>
+              </SignedIn>
               <Link
                 className="items-center flex gap-1"
                 href="https://github.com/pytorch/torchtune"
@@ -44,13 +53,6 @@ export default function RootLayout({
                 target="_blank"
               >
                 {`nextjs`} <ExternalLink height="12" width="12" />
-              </Link>
-              <Link
-                className="items-center flex gap-1"
-                href="https://ui.shadcn.com"
-                target="_blank"
-              >
-                {`shadcn/ui`} <ExternalLink height="12" width="12" />
               </Link>
             </div>
             <div className="flex">
