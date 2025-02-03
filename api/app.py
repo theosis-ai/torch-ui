@@ -1,5 +1,5 @@
 from pathlib import Path
-from typing import List
+from typing import List, Dict, Any
 import time
 
 import uvicorn
@@ -11,6 +11,7 @@ from cp import _cp
 from run import _run_recipe
 from validate import _validate_config
 from ls import _list_recipes
+from read_signatures import read_recipe_signatures
 from logger import logger
 from models import (
     CopyRequest,
@@ -100,6 +101,19 @@ async def validate(request: ValidateRequest) -> None:
         logger.info(f"Config validation successful: {request.config}")
     except Exception as e:
         logger.error(f"Config validation failed: {str(e)}")
+        raise HTTPException(status_code=400, detail=str(e))
+
+
+@app.get("/signatures/")
+async def get_signatures(recipe_name: str) -> Dict[str, Any]:
+    """Get the function/class signatures from a recipe"""
+    try:
+        logger.info(f"Reading signatures for recipe: {recipe_name}")
+        signatures = read_recipe_signatures(recipe_name)
+        logger.info(f"Successfully read signatures for: {recipe_name}")
+        return signatures
+    except Exception as e:
+        logger.error(f"Failed to read signatures: {str(e)}")
         raise HTTPException(status_code=400, detail=str(e))
 
 
