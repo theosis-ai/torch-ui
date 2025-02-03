@@ -25,7 +25,6 @@ Tune Lab's roadmap includes creating specialized personas for Copilot to act as 
 ## Core Tooling
 
 - [torchtune](https://pytorch.org/torchtune/stable/index.html): finetuning library
-- [Modal](https://modal.com): serverless compute
 - [Weights & Biases](https://wandb.ai): experiment tracking
 - [FastAPI](https://fastapi.tiangolo.com): RESTful API
 - [NextJS](https://nextjs.org): React framework
@@ -35,11 +34,13 @@ Tune Lab's roadmap includes creating specialized personas for Copilot to act as 
 
 ## Secondary Tooling
 
-- [Copilot](https://github.com/features/copilot): AI pair programming
-- [Docusaurus](https://docusaurus.io): documentation
+- [Vercel](https://vercel.com): hosted deployment
+- [Modal](https://modal.com): serverless compute
 - [Discord](https://discord.com): experiment notifications
 - [LaunchDarkly](https://launchdarkly.com): feature flags
-- [Vercel](https://vercel.com): hosted deployment
+- [Copilot](https://github.com/features/copilot): AI pair programming
+- [Docusaurus](https://docusaurus.io): documentation
+
 
 ## Downstream Usage
 
