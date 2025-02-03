@@ -11,7 +11,6 @@ import {
   SignedOut,
   UserButton,
 } from "@clerk/nextjs";
-import { Sign } from "crypto";
 
 export const metadata: Metadata = {
   title: "Create Next App",
