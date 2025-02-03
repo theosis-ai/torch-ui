@@ -15,23 +15,22 @@ import { LogIn } from "lucide-react";
 import ModeSwitcher from "@/components/modeSwitcher";
 import { ThemeProvider } from "@/components/themeProvider";
 
-
-const baseUrl = 'https://tunelab.theosis.ai'
+const baseUrl = "https://tunelab.theosis.ai";
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
-    default: 'Tune Lab',
-    template: '%s | Tune Lab',
+    default: "Tune Lab",
+    template: "%s | Tune Lab",
   },
-  description: 'finetune llamas with torchtune',
+  description: "finetune llamas with torchtune",
   openGraph: {
-    title: 'Tune Lab',
-    description: 'finetune llamas with torchtune',
+    title: "Tune Lab",
+    description: "finetune llamas with torchtune",
     url: baseUrl,
-    siteName: 'Tune Lab',
-    locale: 'en_US',
-    type: 'website',
+    siteName: "Tune Lab",
+    locale: "en_US",
+    type: "website",
   },
 };
 
