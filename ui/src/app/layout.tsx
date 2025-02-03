@@ -11,6 +11,7 @@ import {
   SignedOut,
   UserButton,
 } from "@clerk/nextjs";
+import { Sign } from "crypto";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -35,11 +36,11 @@ export default function RootLayout({
                 <Link
                   className="items-center flex gap-1"
                   href="/lab"
-                  target="_blank"
                 >
                 Tune Lab
                 </Link>
               </SignedIn>
+              <SignedOut>
               <Link
                 className="items-center flex gap-1"
                 href="https://github.com/pytorch/torchtune"
@@ -47,6 +48,8 @@ export default function RootLayout({
               >
                 {`torchtune`} <ExternalLink height="12" width="12" />
               </Link>
+              </SignedOut>
+              <SignedOut>
               <Link
                 className="items-center flex gap-1"
                 href="https://github.com/vercel/next.js"
@@ -54,6 +57,7 @@ export default function RootLayout({
               >
                 {`nextjs`} <ExternalLink height="12" width="12" />
               </Link>
+              </SignedOut>
             </div>
             <div className="flex">
               <SignedIn>
