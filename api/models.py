@@ -52,5 +52,9 @@ class RecipeConfigRequest(BaseModel):
     recipe: str
 
 
-class RecipeConfig(BaseModel):
+class RecipeConfigResponse(BaseModel):
     configs: Dict[str, str]
+
+
+class RecipeModelResponse(BaseModel):
+    models: Dict[str, str]

@@ -10,7 +10,7 @@ from download import _download
 from cp import _cp
 from run import _run_recipe
 from validate import _validate_config
-from ls import _list_recipes, _list_recipe_configs
+from ls import _list_recipes, _list_recipe_configs, _list_recipe_models
 from logger import logger
 from models import (
     CopyRequest,
@@ -19,6 +19,8 @@ from models import (
     RunRequest,
     ValidateRequest,
     RecipeConfigRequest,
+    RecipeConfigResponse,
+    RecipeModelResponse,
 )
 
 app = FastAPI(
@@ -104,16 +106,29 @@ async def validate(request: ValidateRequest) -> None:
         raise HTTPException(status_code=400, detail=str(e))
 
 
-@app.get("/configs")
-async def get_signatures(request: RecipeConfigRequest) -> Dict[str, Any]:
-    """Get the function/class signatures from a recipe"""
+@app.get("/configs", response_model=RecipeConfigResponse)
+async def get_configs(request: RecipeConfigRequest) -> Dict[str, Any]:
+    """Get the available configs for a recipe"""
     try:
         logger.info(f"Reading available configs for recipe: {request.recipe}")
         configs = _list_recipe_configs(request.recipe)
         logger.info(f"Successfully read configsfor: {request.recipe}")
-        return {"configs": configs}
+        return configs
     except Exception as e:
         logger.error(f"Failed to read configs: {str(e)}")
+        raise HTTPException(status_code=400, detail=str(e))
+
+
+@app.get("/models", response_model=RecipeModelResponse)
+async def get_models(request: RecipeConfigRequest) -> Dict[str, Any]:
+    """Get the available models for a recipe"""
+    try:
+        logger.info(f"Reading available models for recipe: {request.recipe}")
+        models = _list_recipe_models(request.recipe)
+        logger.info(f"Successfully read models for: {request.recipe}")
+        return models
+    except Exception as e:
+        logger.error(f"Failed to read models: {str(e)}")
         raise HTTPException(status_code=400, detail=str(e))
 
 
