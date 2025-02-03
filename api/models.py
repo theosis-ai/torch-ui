@@ -1,5 +1,5 @@
 from pathlib import Path
-from typing import List, Optional
+from typing import Dict, List, Optional
 
 from pydantic import BaseModel, field_validator
 
@@ -46,3 +46,11 @@ class Recipe(BaseModel):
 
 class ListResponse(BaseModel):
     recipes: List[str]
+
+
+class RecipeConfigRequest(BaseModel):
+    recipe: str
+
+
+class RecipeConfig(BaseModel):
+    configs: Dict[str, str]

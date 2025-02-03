@@ -10,8 +10,7 @@ from download import _download
 from cp import _cp
 from run import _run_recipe
 from validate import _validate_config
-from ls import _list_recipes
-from read_signatures import read_recipe_signatures
+from ls import _list_recipes, _list_recipe_configs
 from logger import logger
 from models import (
     CopyRequest,
@@ -19,6 +18,7 @@ from models import (
     ListResponse,
     RunRequest,
     ValidateRequest,
+    RecipeConfigRequest,
 )
 
 app = FastAPI(
@@ -104,16 +104,16 @@ async def validate(request: ValidateRequest) -> None:
         raise HTTPException(status_code=400, detail=str(e))
 
 
-@app.get("/signatures/")
-async def get_signatures(recipe_name: str) -> Dict[str, Any]:
+@app.get("/configs")
+async def get_signatures(request: RecipeConfigRequest) -> Dict[str, Any]:
     """Get the function/class signatures from a recipe"""
     try:
-        logger.info(f"Reading signatures for recipe: {recipe_name}")
-        signatures = read_recipe_signatures(recipe_name)
-        logger.info(f"Successfully read signatures for: {recipe_name}")
-        return signatures
+        logger.info(f"Reading available configs for recipe: {request.recipe}")
+        configs = _list_recipe_configs(request.recipe)
+        logger.info(f"Successfully read configsfor: {request.recipe}")
+        return {"configs": configs}
     except Exception as e:
-        logger.error(f"Failed to read signatures: {str(e)}")
+        logger.error(f"Failed to read configs: {str(e)}")
         raise HTTPException(status_code=400, detail=str(e))
 
 
