@@ -66,4 +66,4 @@ class ConfigSettingsRequest(BaseModel):
 
 
 class ConfigSettingsResponse(BaseModel):
-    settings: Dict[str, Any]
+    settings: List[str]

@@ -148,8 +148,9 @@ async def get_settings(request: ConfigSettingsRequest) -> Dict[str, Any]:
         all_configs = _list_recipe_config_paths(request.recipe)
         requested_config = all_configs.get(request.config, None)
         settings = _get_config_settings(requested_config)
+        keys = list(settings["settings"].keys())
         logger.info(f"Successfully read settings for: {request.config}")
-        return settings
+        return {"settings": keys}
     except Exception as e:
         logger.error(f"Failed to read settings: {str(e)}")
         raise HTTPException(status_code=400, detail=str(e))
