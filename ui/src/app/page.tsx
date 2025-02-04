@@ -4,10 +4,7 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <div 
-    className="flex flex-col items-center justify-center font-mono h-[80vh]"
-    style={{ border: '2px solid yellow' }}
-    >
+    <div className="flex flex-col items-center justify-center font-mono h-[80vh]">
       <Link
         href="https://github.com/theosis-ai/tune-lab"
         target="_blank"

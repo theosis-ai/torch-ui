@@ -31,19 +31,15 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-
   return (
     <ClerkProvider>
       <html lang="en">
         <body
           className={`${GeistSans.variable} ${GeistMono.variable} antialiased min-h-screen flex flex-col`}
-          style={{ border: '2px solid red' }}
         >
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <Nav />
-            <main className="flex-grow">
-              {children}
-            </main>
+            <Nav />
+            <main className="flex-grow">{children}</main>
             <Footer />
           </ThemeProvider>
         </body>
