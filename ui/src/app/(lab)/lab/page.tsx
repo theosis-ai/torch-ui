@@ -5,16 +5,14 @@ export default function Page() {
   return (
     <SidebarProvider>
       <AppSidebar />
-      <main className="w-screen h-screen">
-      <SidebarInset className="ml-30" >
-        <div className="p-4" style={{ border: "2px solid blue" }}>
+      <SidebarInset className="ml-[18rem]">
+        <div className="p-4">
           <SidebarTrigger className="mb-4"/>
           <div className="rounded-lg border p-4">
             <p>Main Content</p>
           </div>
         </div>
       </SidebarInset>
-      </main>
     </SidebarProvider>
   );
 }
