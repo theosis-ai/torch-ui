@@ -10,7 +10,13 @@ from download import _download
 from cp import _cp
 from run import _run_recipe
 from validate import _validate_config
-from ls import _list_recipes, _list_recipe_configs, _list_recipe_models
+from ls import (
+    _list_recipes,
+    _list_recipe_configs,
+    _list_recipe_models,
+    _list_recipe_config_paths,
+)
+from configs import _get_config_settings
 from logger import logger
 from models import (
     CopyRequest,
@@ -21,6 +27,8 @@ from models import (
     RecipeConfigRequest,
     RecipeConfigResponse,
     RecipeModelResponse,
+    ConfigSettingsRequest,
+    ConfigSettingsResponse,
 )
 
 app = FastAPI(
@@ -129,6 +137,21 @@ async def get_models(request: RecipeConfigRequest) -> Dict[str, Any]:
         return models
     except Exception as e:
         logger.error(f"Failed to read models: {str(e)}")
+        raise HTTPException(status_code=400, detail=str(e))
+
+
+@app.get("/settings", response_model=ConfigSettingsResponse)
+async def get_settings(request: ConfigSettingsRequest) -> Dict[str, Any]:
+    """Get the settings for a config"""
+    try:
+        logger.info(f"Reading available settings for config: {request.config}")
+        all_configs = _list_recipe_config_paths(request.recipe)
+        requested_config = all_configs.get(request.config, None)
+        settings = _get_config_settings(requested_config)
+        logger.info(f"Successfully read settings for: {request.config}")
+        return settings
+    except Exception as e:
+        logger.error(f"Failed to read settings: {str(e)}")
         raise HTTPException(status_code=400, detail=str(e))
 
 
