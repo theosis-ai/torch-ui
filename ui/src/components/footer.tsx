@@ -1,13 +1,13 @@
-import { SignedOut } from '@clerk/nextjs';
+import { SignedOut } from "@clerk/nextjs";
 
 export default function Footer() {
-    return (
-        <SignedOut>
-        <footer className="mt-auto">
-          <p className="text-neutral-600 dark:text-neutral-300 items-center flex flex-col gap-1 text-xs">
-            © {new Date().getFullYear()} Theosis AI
-          </p>
+  return (
+    <SignedOut>
+      <footer style={{ border: '2px solid blue' }}>
+        <p className="items-center flex flex-col text-xs mb-15">
+          © {new Date().getFullYear()} Theosis AI
+        </p>
       </footer>
-      </SignedOut>
-    )
+    </SignedOut>
+  );
 }

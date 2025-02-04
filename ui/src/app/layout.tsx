@@ -1,19 +1,10 @@
-import "@/globals.css";
+import "@/app/globals.css";
 import type { Metadata } from "next";
-import Link from "next/link";
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
-import {
-  ClerkProvider,
-  SignInButton,
-  SignedIn,
-  SignedOut,
-  UserButton,
-} from "@clerk/nextjs";
-import { LogIn } from "lucide-react";
-import ModeSwitcher from "@/components/modeSwitcher";
+import { ClerkProvider } from "@clerk/nextjs";
 import { ThemeProvider } from "@/components/themeProvider";
-import Nav from "@/components/navigation";
+import Nav from "@/components/nav";
 import Footer from "@/components/footer";
 
 const baseUrl = "https://tunelab.theosis.ai";
@@ -40,15 +31,19 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
   return (
     <ClerkProvider>
       <html lang="en">
         <body
-          className={`${GeistSans.variable} ${GeistMono.variable} antialiased`}
+          className={`${GeistSans.variable} ${GeistMono.variable} antialiased min-h-screen flex flex-col`}
+          style={{ border: '2px solid red' }}
         >
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-            <Nav />
-            {children}
+          <Nav />
+            <main className="flex-grow">
+              {children}
+            </main>
             <Footer />
           </ThemeProvider>
         </body>

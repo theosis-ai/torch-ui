@@ -4,7 +4,10 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center justify-center font-mono h-[50vh]">
+    <div 
+    className="flex flex-col items-center justify-center font-mono h-[80vh]"
+    style={{ border: '2px solid yellow' }}
+    >
       <Link
         href="https://github.com/theosis-ai/tune-lab"
         target="_blank"
@@ -17,13 +20,13 @@ export default function Home() {
         a hopefully useful web app for torchtune
       </p>
       <div className="flex flex-col items-center gap-1.5 space-y-2">
-      <Link
-        className="items-center flex gap-1"
-        href="https://github.com/pytorch/torchtune"
-        target="_blank"
-      >
-        {`torchtune`} <ExternalLink height="12" width="12" />
-      </Link>
+        <Link
+          className="items-center flex gap-1"
+          href="https://github.com/pytorch/torchtune"
+          target="_blank"
+        >
+          {`torchtune`} <ExternalLink height="12" width="12" />
+        </Link>
       </div>
     </div>
   );
