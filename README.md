@@ -7,20 +7,7 @@ Tune Lab is a [FastAPI](https://fastapi.tiangolo.com) + [NextJS](https://nextjs.
 
 ## TLDR
 
-Tune Lab contains two main components: a torchtune + FastAPI backend and a NextJS frontend. The backend is responsible for running finetuning experiments, while the frontend allows users to quickly launch torchtune's in-built recipes from the convience of the browser.
-
-Why use a mono-repo? Tune Lab is designed to be a standalone application that can be deployed to a server and used to manage experiments. The mono-repo structure makes it easy to deploy the application as a single unit, and to use GitHub Copilot to generate code across the backend and frontend by allowing Copilot to index the entire codebase.
-
-## Pair Programming with GitHub Copilot and OpenAI 
-
-Copilot benefits from having access to the entire codebase, and can generate code that is consistent across the backend and frontend. This makes it easier to maintain the application and to add new features.
-
-Currently, Copilot receives basic instructions from [copilot-instructions](.github/copilot-instructions.md) and generates code based on those instructions. 
-
-> [!NOTE]
-> The instructions are a work in progress and will be updated as the application evolves.
-
-Tune Lab's roadmap includes creating specialized personas for Copilot to act as a deep learning engineer, an infrastructure engineer, a backend engineer, and frontend engineer. These personas will be used to generate code that is specific to the task at hand, while maintaining focus on directives contained in copilot-instructions. 
+Tune Lab contains two main components: a torchtune + FastAPI backend and a NextJS frontend. The backend is responsible for running finetuning experiments, while the frontend allows users to quickly launch torchtune's pre-built recipes from the convience of the browser.
 
 ## Core Tooling
 
@@ -30,7 +17,6 @@ Tune Lab's roadmap includes creating specialized personas for Copilot to act as 
 
 ## Secondary Tooling
 
-- [Copilot](https://github.com/features/copilot): AI pair programming
 - [Vercel](https://vercel.com): hosted deployment
 - [shadcn/ui](https://ui.shadcn.com): UI components
 - [Modal](https://modal.com): serverless compute
@@ -41,6 +27,7 @@ Tune Lab's roadmap includes creating specialized personas for Copilot to act as 
 - [LaunchDarkly](https://launchdarkly.com): feature flags
 - [Discord](https://discord.com): experiment notifications
 - [Docusaurus](https://docusaurus.io): documentation
+- [Copilot](https://github.com/features/copilot): AI pair programming
 
 
 ## Downstream Usage
