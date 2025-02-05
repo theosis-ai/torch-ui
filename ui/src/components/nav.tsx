@@ -11,7 +11,6 @@ export default function Nav() {
   if (pathname === "/lab") return null;
 
   return (
-    <div className="h-[10]">
       <nav className="flex items-center justify-between mt-8 ml-4 mr-4 mb-4 sm:ml-12 sm:mr-12">
         <div>
           <ModeSwitcher />
@@ -40,6 +39,5 @@ export default function Nav() {
           </SignedOut>
         </div>
       </nav>
-    </div>
   );
 }
