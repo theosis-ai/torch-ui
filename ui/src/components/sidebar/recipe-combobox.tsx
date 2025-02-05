@@ -18,17 +18,35 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover"
+import { API_BASE_URL } from "@/utils/config"
+import { getRecipes } from "@/lib/services/recipes"
 
-const recipes = [
-  {
-    value: "a_recipe",
-    label: "a recipe",
-  },
-]
+type Recipe = {
+  value: string
+  label: string
+}
 
 export function RecipeCombobox() {
   const [open, setOpen] = React.useState(false)
   const [value, setValue] = React.useState("")
+  const [recipes, setRecipes] = React.useState<Recipe[]>([])
+  const [loading, setLoading] = React.useState(true)
+
+  React.useEffect(() => {
+    getRecipes()
+      .then(recipes => {
+        setRecipes(recipes)
+        setLoading(false)
+      })
+      .catch(err => {
+        console.error('Failed to fetch recipes:', err)
+        setLoading(false)
+      })
+  }, [])
+
+  if (loading) {
+    return <Button variant="outline" className="w-[200px]">Loading...</Button>
+  }
 
   return (
     <Popover open={open} onOpenChange={setOpen}>
@@ -51,7 +69,7 @@ export function RecipeCombobox() {
           <CommandList>
             <CommandEmpty>No recipe found.</CommandEmpty>
             <CommandGroup>
-              {recipes.map((recipe) => (
+              {recipes?.map((recipe) => (
                 <CommandItem
                   key={recipe.value}
                   value={recipe.value}

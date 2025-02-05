@@ -4,7 +4,9 @@ import time
 
 import uvicorn
 from fastapi import FastAPI, HTTPException, Request
+from fastapi.middleware.cors import CORSMiddleware
 from omegaconf import OmegaConf
+import asyncio
 
 from download import _download
 from cp import _cp
@@ -37,6 +39,15 @@ app = FastAPI(
     version="0.1.0",
     docs_url="/api/py/docs",
     openapi_url="/api/py/openapi.json",
+)
+
+# Add CORS middleware
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:3000"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 
@@ -154,6 +165,19 @@ async def get_settings(request: ConfigSettingsRequest) -> Dict[str, Any]:
     except Exception as e:
         logger.error(f"Failed to read settings: {str(e)}")
         raise HTTPException(status_code=400, detail=str(e))
+
+
+@app.post("/shutdown")
+async def shutdown(host: str = "127.0.0.1", port: int = 8000) -> None:
+    """Shutdown the server"""
+    try:
+        logger.info("Shutting down server...")
+        # Schedule server shutdown
+        uvicorn.shutdown(app, host=host, port=port)
+        return {"success": True}
+    except Exception as e:
+        logger.error(f"Failed to shutdown server: {str(e)}")
+        raise HTTPException(status_code=500, detail=str(e))
 
 
 def serve(host: str = "127.0.0.1", port: int = 8000) -> None:
