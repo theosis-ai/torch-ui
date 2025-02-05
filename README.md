@@ -43,7 +43,7 @@ Clone the repo and implement your own Clerk auth application by creating an acco
 
 - [GitHub Copilot](https://github.com/features/copilot)
 
-GitHub Copilot instructions can be viewed at [copilot-instructions.md](.github/copilot-instructions.md) and [copilot-devs](.github/copilot-personas/).
+GitHub Copilot instructions can be viewed at [copilot-instructions.md](.github/copilot-instructions.md) and [copilot-personas](.github/copilot-personas/).
 
 ## Downstream Usage
 
