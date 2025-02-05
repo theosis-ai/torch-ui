@@ -9,6 +9,13 @@ Tune Lab is a [FastAPI](https://fastapi.tiangolo.com) + [NextJS](https://nextjs.
 
 Tune Lab contains two main components: a torchtune + FastAPI backend and a NextJS frontend. The backend is responsible for running finetuning experiments, while the frontend allows users to quickly launch torchtune's pre-built recipes from the convience of the browser.
 
+## Intended Use
+
+Clone the repo and implement your own Clerk auth application by creating an account on Clerk, and updating the local .env or production environment variables in Vercel.
+
+> [!WARNING]
+> the purpose of the Clerk auth wall is to gate access to compute resources behind a protected route in the app. 
+
 ## Core Tooling
 
 - [torchtune](https://pytorch.org/torchtune/stable/index.html): finetuning library
@@ -21,14 +28,22 @@ Tune Lab contains two main components: a torchtune + FastAPI backend and a NextJ
 - [shadcn/ui](https://ui.shadcn.com): UI components
 - [Modal](https://modal.com): serverless compute
 - [Weights & Biases](https://wandb.ai): experiment tracking
-- [Neon](https://neon.tech/home): serverless postgreSQL database
-- [Drizzle](https://orm.drizzle.team): database ORM
 - [Clerk](https://clerk.com): authentication and authorization
-- [LaunchDarkly](https://launchdarkly.com): feature flags
 - [Discord](https://discord.com): experiment notifications
 - [Docusaurus](https://docusaurus.io): documentation
-- [Copilot](https://github.com/features/copilot): AI pair programming
 
+
+## Tertiary Tooling
+
+- [LaunchDarkly](https://launchdarkly.com): feature flags
+- [Neon](https://neon.tech/home): serverless postgreSQL database
+- [Drizzle](https://orm.drizzle.team): database ORM
+
+## AI Pair Programming
+
+- [GitHub Copilot](https://github.com/features/copilot)
+
+GitHub Copilot instructions can be viewed at [copilot-instructions.md](.github/copilot-instructions.md) and [copilot-devs](.github/copilot-personas/).
 
 ## Downstream Usage
 
@@ -37,3 +52,6 @@ Llama models tuned with Tune Lab are intended to be used with [Llama Stack](http
 ## Contributing
 
 Tune Lab is closed for contributions at this time. Thank you for your interest!
+
+> [!NOTE]
+> Tune Lab is a portfolio project of the core maintainer
