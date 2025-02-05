@@ -9,7 +9,7 @@ export default function Page() {
         <div className="p-4">
           <SidebarTrigger className="mb-4"/>
           <div className="rounded-lg border p-4">
-            <p>Main Content</p>
+            <p>an eventual interactive playground</p>
           </div>
         </div>
       </SidebarInset>
