@@ -1,9 +1,9 @@
 # Tune Lab
 
+Tune Lab is a [FastAPI](https://fastapi.tiangolo.com) + [NextJS](https://nextjs.org) application that is purpose built for [torchtune](https://github.com/pytorch/torchtune).
+
 > [!NOTE]
 > Tune Lab is in active development and is not yet ready for use.
-
-Tune Lab is a [FastAPI](https://fastapi.tiangolo.com) + [NextJS](https://nextjs.org) application that is purpose built for [torchtune](https://github.com/pytorch/torchtune).
 
 ## TLDR
 
@@ -11,7 +11,7 @@ Tune Lab contains two main components: a torchtune + FastAPI backend and a NextJ
 
 ## Intended Use
 
-Clone the repo and implement your own Clerk auth application by creating an account on Clerk, and updating the local .env or production environment variables in Vercel.
+Clone the repo and implement your own Clerk auth application by creating an account on [Clerk](https://clerk.com), and updating the local .env or production environment variables in Vercel.
 
 > [!WARNING]
 > the purpose of the Clerk auth wall is to gate access to compute resources behind a protected route in the app. 
