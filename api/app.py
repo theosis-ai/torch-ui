@@ -6,8 +6,6 @@ import uvicorn
 from fastapi import FastAPI, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
 from omegaconf import OmegaConf
-import asyncio
-
 from download import _download
 from cp import _cp
 from run import _run_recipe
