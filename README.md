@@ -16,13 +16,15 @@ Clone the repo and implement your own Clerk auth application by creating an acco
 > [!WARNING]
 > the purpose of the Clerk auth wall is to gate access to compute resources behind a protected route in the app. 
 
-## Core Tooling
+## Tooling 
+
+### Primary Tooling
 
 - [torchtune](https://pytorch.org/torchtune/stable/index.html): finetuning library
 - [FastAPI](https://fastapi.tiangolo.com): RESTful API
 - [NextJS](https://nextjs.org): React framework
 
-## Secondary Tooling
+### Secondary Tooling
 
 - [Vercel](https://vercel.com): hosted deployment
 - [shadcn/ui](https://ui.shadcn.com): UI components
@@ -32,18 +34,11 @@ Clone the repo and implement your own Clerk auth application by creating an acco
 - [Discord](https://discord.com): experiment notifications
 - [Docusaurus](https://docusaurus.io): documentation
 
-
-## Tertiary Tooling
+### Tertiary Tooling
 
 - [LaunchDarkly](https://launchdarkly.com): feature flags
 - [Neon](https://neon.tech/home): serverless postgreSQL database
 - [Drizzle](https://orm.drizzle.team): database ORM
-
-## AI Pair Programming
-
-- [GitHub Copilot](https://github.com/features/copilot)
-
-GitHub Copilot instructions can be viewed at [copilot-instructions.md](.github/copilot-instructions.md) and [copilot-personas](.github/copilot-personas/).
 
 ## Downstream Usage
 
