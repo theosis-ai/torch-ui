@@ -1,12 +1,13 @@
 # Stack Auth + Neon Auth
 
 ## on dev, implement
--[ ] protect routes for /lab
--[ ] auth provider on root layout
--[ ] on sign in, force redirect to /lab
--[ ] conditionally render account avatar (if exists)
--[ ] conditionally render signed in | signed out nav
--[ ] conditionally render signed in | signed out footer
+- [x] new GitHub oauth app
+- [ ] protect routes for /lab
+- [ ] auth provider on root layout
+- [ ] on sign in, force redirect to /lab
+- [ ] conditionally render account avatar (if exists)
+- [ ] conditionally render signed in | signed out nav
+- [ ] conditionally render signed in | signed out footer
 
 ## if adopting, do
 - [ ] implement prod auth wall in vercel
