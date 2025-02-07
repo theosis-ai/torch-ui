@@ -1,6 +1,6 @@
-# Knowledge 
+# Knowledge Base
 
-This directory contains freely accessible academic papers to be referenced in the project.
+This directory contains freely accessible assets to be used in the Copilot model contexts.
 
 ## Llama model family research and development
 
