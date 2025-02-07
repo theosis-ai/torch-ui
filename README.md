@@ -6,7 +6,7 @@ Tune Lab is a [FastAPI](https://fastapi.tiangolo.com) + [NextJS](https://nextjs.
 > Tune Lab is in active development and is not yet ready for use
 
 > [!IMPORTANT]
-> Tune Lab will be built alongside Copilot and is currently closed for contributions
+> Tune Lab will be built alongside [Copilot](https://github.com/features/copilot) and [Copilot Workspace](https://githubnext.com/projects/copilot-workspace), and is currently closed for contributions
 
 ## Intended Use
 
