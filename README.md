@@ -28,7 +28,7 @@ Clone the repo and:
 
 - [api/](./api) contains the FastAPI backend
 - [ui/](./ui) contains the NextJS frontend
-- [copilot-instructions](.github/copilot-instructions) contains the Copilot system prompt
+- [copilot-instructions](.github/copilot-instructions.md) contains the Copilot system prompt
 - [.instructions/](./.instructions) contains engineering personas for Copilot instructions
 - [.knowledge/](./.knowledge) contains the knowledge base for Copilot
 - [.system/](./.system) contains system design charts for Copilot
