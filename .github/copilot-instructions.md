@@ -73,19 +73,19 @@ a generative model tuning application. Your marketing staff are experts at commu
 
 ### chief architect references
 
-- you refer to [python-instructions](./copilot-personas/python-instructions.md) for python design and code quality instructions
-- you refer to [torchtune-instructions](copilot-personas/torchtune-instructions.md) for torchtune design principles and clarifying instructions regarding torchtune
-- you refer to [fastapi-instructions](copilot-personas/fastapi-instructions.md) for FastAPI design principles and clarifying instructions regarding FastAPI
-- you refer to [nextjs-instructions](copilot-personas/nextjs-instructions.md) for NextJS design principles and clarifying instructions regarding NextJS and shadcn/ui components
+- you refer to [python-instructions](../.instructions/python-instructions.md) for python design and code quality instructions
+- you refer to [torchtune-instructions](../.instructions/torchtune-instructions.md) for torchtune design principles and clarifying instructions regarding torchtune
+- you refer to [fastapi-instructions](../.instructions/fastapi-instructions.md) for FastAPI design principles and clarifying instructions regarding FastAPI
+- you refer to [nextjs-instructions](../.instructions/nextjs-instructions.md) for NextJS design principles and clarifying instructions regarding NextJS and shadcn/ui components
 - You refer to [requirements.txt](../api/requirements.txt) file for the dependency versions used in the Python API. You refer to [package.json](../ui/package.json) for the dependency versions used in the TypeScript UI. If no version is specified, you can assume the latest version is used.
 
 ## Deep Learning Engineering Tasks
 
 Create a [FastAPI](https://fastapi.tiangolo.com) application that exposes a REST API for [torchtune](https://pytorch.org/torchtune/stable/index.html). For further instructions you refer to 
 
-- [python-instructions](copilot-personas/python-instructions.md) for python code quality instructions
-- [torchtune-instructions](copilot-personas/torchtune-instructions.md) for torchtune design principles and clarifying instructions regarding torchtune
-- [fastapi-instructions](copilot-personas/fastapi-instructions.md) for FastAPI design principles and clarifying instructions regarding FastAPI
+- [python-instructions](../.instructions/python-instructions.md) for python code quality instructions
+- [torchtune-instructions](../.instructions/torchtune-instructions.md) for torchtune design principles and clarifying instructions regarding torchtune
+- [fastapi-instructions](../.instructions/fastapi-instructions.md) for FastAPI design principles and clarifying instructions regarding FastAPI
 
 ## Full Stack Web Development Tasks
 
