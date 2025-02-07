@@ -14,7 +14,7 @@ export default function Home() {
       </Link>
       <h1 className="text-4xl font-medium tracking-wider mb-2">Tune Lab</h1>
       <p className="font-sans tracking-wider mb-12">
-        a hopefully useful web app for torchtune
+        a web app for torchtune
       </p>
       <div className="flex flex-col items-center gap-1.5 space-y-2">
         <Link
