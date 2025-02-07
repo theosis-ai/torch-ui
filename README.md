@@ -5,6 +5,9 @@ Tune Lab is a [FastAPI](https://fastapi.tiangolo.com) + [NextJS](https://nextjs.
 > [!NOTE]
 > Tune Lab is in active development and is not yet ready for use.
 
+> [!INFO]
+> Tune Lab will be built alongside Copilot and is currently closed for contributions
+
 ## TLDR
 
 Tune Lab contains two main components: a torchtune + FastAPI backend and a NextJS frontend. The backend is responsible for running finetuning experiments, while the frontend allows users to quickly launch torchtune's pre-built recipes from the convience of the browser.
@@ -43,10 +46,3 @@ Clone the repo and implement your own Clerk auth application by creating an acco
 ## Downstream Usage
 
 Llama models tuned with Tune Lab are intended to be used with [Llama Stack](https://github.com/meta-llama/llama-stack) applications in [Llama Lab](https://github.com/theosis-ai/llama-lab).
-
-## Contributing
-
-Tune Lab is closed for contributions at this time. Thank you for your interest!
-
-> [!NOTE]
-> Tune Lab is a portfolio project of the core maintainer
