@@ -12,13 +12,14 @@ Tune Lab is a [FastAPI](https://fastapi.tiangolo.com) + [NextJS](https://nextjs.
 
 Clone the repo and:
 
-- choose local or Vercel hosted deployment
-- implement your own Clerk auth application by creating an account on [Clerk](https://clerk.com), and update the local .env or production environment in Vercel.
-- creating a Discord server application key, and update the local .env or production environment in Vercel.
-- select a compute backend or implement a custom compute backend, and update the local .env or production environment in Vercel.
+- choose a local or Vercel hosted deployment
+- create an account on [Clerk](https://clerk.com)
+- create a Clerk application, and update the local .env or production environment in Vercel
+- create a Discord server application key, and update the local .env or production environment in Vercel
+- select a compute backend or implement a custom compute backend, and update the local .env or production environment in Vercel
 
 > [!WARNING]
-> the purpose of the Clerk auth wall is to gate access to compute resources behind a protected route in the app
+> the purpose of the Clerk auth wall is to gate access to GPU resources
 
 ## Structure
 
