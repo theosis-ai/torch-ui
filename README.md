@@ -14,32 +14,24 @@ Tune Lab contains two main components: a torchtune + FastAPI backend and a NextJ
 
 ## Intended Use
 
-Clone the repo and implement your own Clerk auth application by creating an account on [Clerk](https://clerk.com), and updating the local .env or production environment variables in Vercel.
+Clone the repo and:
+
+- choose local or Vercel hosted deployment
+- implement your own Clerk auth application by creating an account on [Clerk](https://clerk.com), and update the local .env or production environment in Vercel.
+- creating a Discord server application key, and update the local .env or production environment in Vercel.
+- set your own Modal key or implement a custom compute backend, and update the local .env or production environment in Vercel.
 
 > [!WARNING]
 > the purpose of the Clerk auth wall is to gate access to compute resources behind a protected route in the app. 
 
-## Tooling 
+## Structure
 
-### Primary Tooling
-
-- [torchtune](https://pytorch.org/torchtune/stable/index.html): finetuning library
-- [FastAPI](https://fastapi.tiangolo.com): RESTful API
-- [NextJS](https://nextjs.org): React framework
-
-### Secondary Tooling
-
-- [Vercel](https://vercel.com): hosted deployment
-- [shadcn/ui](https://ui.shadcn.com): UI components
-- [Modal](https://modal.com): serverless compute
-- [Clerk](https://clerk.com): authentication and authorization
-- [Discord](https://discord.com): experiment notifications
-- [Docusaurus](https://docusaurus.io): documentation
-
-### Tertiary Tooling
-
-- [LaunchDarkly](https://launchdarkly.com): feature flags
-- [Neon](https://neon.tech/home): serverless postgreSQL database
+- [api/](./api) contains the FastAPI backend
+- [ui/](./ui) contains the NextJS frontend
+- [copilot-instructions](.github/copilot-instructions) contains the Copilot system prompt
+- [.instructions/](./.instructions) contains engineering personas for Copilot instructions
+- [.knowledge/](./.knowledge) contains the knowledge base for Copilot
+- [.system/](./.system) contains system design charts for Copilot
 
 ## Downstream Usage
 
