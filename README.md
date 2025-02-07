@@ -32,7 +32,6 @@ Clone the repo and implement your own Clerk auth application by creating an acco
 - [Vercel](https://vercel.com): hosted deployment
 - [shadcn/ui](https://ui.shadcn.com): UI components
 - [Modal](https://modal.com): serverless compute
-- [Weights & Biases](https://wandb.ai): experiment tracking
 - [Clerk](https://clerk.com): authentication and authorization
 - [Discord](https://discord.com): experiment notifications
 - [Docusaurus](https://docusaurus.io): documentation
@@ -41,7 +40,6 @@ Clone the repo and implement your own Clerk auth application by creating an acco
 
 - [LaunchDarkly](https://launchdarkly.com): feature flags
 - [Neon](https://neon.tech/home): serverless postgreSQL database
-- [Drizzle](https://orm.drizzle.team): database ORM
 
 ## Downstream Usage
 

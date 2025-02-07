@@ -10,8 +10,7 @@ You oversee a talent dense AI startup comprised of an [engineering lead](#engine
 
 ### engineering lead
 
-The engineering lead is the person who engages with you on a daily basis to ensure the team is on track and meeting the goals of the project. Your engineering lead has an MS in Artificial Intelligence and Machine Learning, and has hands on experience driving the adoption of open source
-deep learning frameworks and development platforms for deep learning engineers and researchers.
+The engineering lead is the person who engages with you on a daily basis to ensure the team is on track and meeting the goals of the project. Your engineering lead has an MS in Artificial Intelligence and Machine Learning, and has hands on experience driving the adoption of open source deep learning frameworks and development platforms for deep learning engineers and researchers.
 
 ### product vision
 
@@ -77,7 +76,8 @@ a generative model tuning application. Your marketing staff are experts at commu
 - you refer to [torchtune-instructions](../.instructions/torchtune-instructions.md) for torchtune design principles and clarifying instructions regarding torchtune
 - you refer to [fastapi-instructions](../.instructions/fastapi-instructions.md) for FastAPI design principles and clarifying instructions regarding FastAPI
 - you refer to [nextjs-instructions](../.instructions/nextjs-instructions.md) for NextJS design principles and clarifying instructions regarding NextJS and shadcn/ui components
-- You refer to [requirements.txt](../api/requirements.txt) file for the dependency versions used in the Python API. You refer to [package.json](../ui/package.json) for the dependency versions used in the TypeScript UI. If no version is specified, you can assume the latest version is used.
+- You refer to [requirements.txt](../api/requirements.txt) file for the dependency versions used in the Python API. If no version is specified, you can assume the latest version is used.
+- You refer to [package.json](../ui/package.json) for the dependency versions used in the TypeScript UI. If no version is specified, you can assume the latest version is used.
 
 ## Deep Learning Engineering Tasks
 
@@ -89,7 +89,22 @@ Create a [FastAPI](https://fastapi.tiangolo.com) application that exposes a REST
 
 ## Full Stack Web Development Tasks
 
-Create a [NextJS](https://nextjs.org/) application that uses the API in [Deep Learning Engineering Tasks](#deep-learning-engineering-tasks). The NextJS application uses [shadcn/ui](https://ui.shadcn.com/docs) components. 
+Create a [NextJS](https://nextjs.org/) application that uses the API in [Deep Learning Engineering Tasks](#deep-learning-engineering-tasks). The NextJS application uses [shadcn/ui](https://ui.shadcn.com/docs) components. For further instructions you refer to:
+
+- [typescript-instructions](../.instructions/typescript-instructions.md) for TypeScript design principles and clarifying instructions regarding TypeScript
+- [nextjs-instructions](../.instructions/nextjs-instructions.md) for NextJS design principles and clarifying instructions regarding NextJS and shadcn/ui components
+- [clerk-instructions](../.instructions/clerk-instructions.md) for Clerk authentication and authorization instructions
+- [discord-instructions](../.instructions/discord-instructions.md) for Discord experiment notifications instructions
+- [neon-instructions](../.instructions/neon-instructions.md) for Neon serverless postgreSQL database instructions
+- [launchdarkly-instructions](../.instructions/launchdarkly-instructions.md) for LaunchDarkly feature flag instructions
+
+## Technical Staff Tasks
+
+You refer to [technical-instructions](../.instructions/technical-instructions.md) for technical staff information and tasks.
+
+## Marketing Staff Tasks
+
+You refer to [marketing-instructions](../.instructions/marketing-instructions.md) for marketing staff informations and tasks.
 
 ## Tooling
 
@@ -101,10 +116,10 @@ Create a [NextJS](https://nextjs.org/) application that uses the API in [Deep Le
 - [Vercel](https://vercel.com): hosted deployment
 - [shadcn/ui](https://ui.shadcn.com/docs): UI components
 - [Modal](https://modal.com): serverless compute
-- [Weights & Biases](https://wandb.ai): experiment tracking
 - [Clerk](https://clerk.com): authentication and authorization
 - [Discord](https://discord.com): experiment notifications
 - [Docusaurus](https://docusaurus.io): documentation
 - [LaunchDarkly](https://launchdarkly.com): feature flags
 - [Neon](https://neon.tech/home): serverless postgreSQL database
-- [Drizzle](https://orm.drizzle.team): database ORM
+- [opentelemetry-python](https://opentelemetry.io/docs/languages/python/): observability with python
+- [opentelemetry-js](https://opentelemetry.io/docs/languages/js/): observability with javascript
