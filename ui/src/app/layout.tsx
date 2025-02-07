@@ -1,8 +1,9 @@
 import "@/globals.css";
+import { StackProvider, StackTheme } from "@stackframe/stack";
+import { stackServerApp } from "../stack";
 import type { Metadata } from "next";
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
-import { ClerkProvider } from "@clerk/nextjs";
 import { ThemeProvider } from "@/components/themeProvider";
 import Nav from "@/components/nav";
 import Footer from "@/components/footer";
@@ -32,18 +33,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider>
       <html lang="en">
         <body
           className={`${GeistSans.variable} ${GeistMono.variable} antialiased min-h-screen flex flex-col`}
-        >
+        ><StackProvider app={stackServerApp}><StackTheme>
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
             <Nav />
             <main className="flex-grow">{children}</main>
             <Footer />
           </ThemeProvider>
-        </body>
+        </StackTheme></StackProvider></body>
       </html>
-    </ClerkProvider>
   );
 }

@@ -1,9 +1,12 @@
-import { SignIn } from "@clerk/nextjs";
+'use client';
+import { SignIn } from "@stackframe/stack";
 
-export default function Page() {
-  return (
-    <div className="flex justify-center py-24">
-      <SignIn signUpUrl="/sign-up" forceRedirectUrl="/lab" />
-    </div>
-  );
+export default function DefaultSignIn() {
+  // optionally redirect to some other page if the user is already signed in
+  // const user = useUser();
+  // if (user) { redirect to some other page }
+  return <SignIn 
+  fullPage={true}
+  automaticRedirect={true}
+  />;
 }

@@ -1,4 +1,3 @@
-import { ClerkProvider } from "@clerk/nextjs";
 import "./lab.css";
 
 export default function LabLayout({
@@ -7,10 +6,8 @@ export default function LabLayout({
   children: React.ReactNode;
 }) {
   return (
-    <ClerkProvider>
       <div >
         {children}
       </div>
-    </ClerkProvider>
   );
 }

@@ -20,20 +20,33 @@
 
 ## Neon Auth
 
-### likes
-
-lorem ipsum dolor sit amet
-
-### dislikes
-
-lorem ipsum dolor sit amet
+No issues encountered
 
 ## Stack Auth
 
 ### likes
 
-lorem ipsum dolor sit amet
+- easy sign-in component generation
+- easy integration with Neon Auth
 
 ### dislikes
 
-lorem ipsum dolor sit amet
+- GitHub oauth app is still owned by personal account of Stack Auth founder
+- browser launch on succesful npx install is unnecessary demoware feature imo
+- Handler name is too generic, possible too abstracted
+- npx install automically updates layout.tsx
+- no SignOut | SignedIn | SignedOut components
+- StackTheme applied to layout.tsx during npx install is unnecessary and unwelcome
+- no mention of changing GitHub oauth app to my oauth app
+- protected routes docs are a little buried
+- force redirect after login | signup | logout is buried in `urls: {key: value}` of app objects
+- shared email server by default
+- account settings are buried in /handler/account-settings
+- custom email SMTP docs are non-existent and placed on the user to figure out
+
+### decision
+
+- will not adopt until GitHub oauth app is updated to Stack Auth org
+- will not adopt until SignOut | SignedIn | SignedOut components are implemented
+- will not adopt until org email domain is implemented and easier to configure
+- will not adopt until styling components is easier to implement to bring on brand with existing app
