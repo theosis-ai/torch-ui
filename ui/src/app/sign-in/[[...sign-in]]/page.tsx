@@ -6,7 +6,7 @@ export default function DefaultSignIn() {
   // const user = useUser();
   // if (user) { redirect to some other page }
   return <SignIn 
-  fullPage={true}
-  automaticRedirect={true}
+  fullPage
+  automaticRedirect
   />;
 }
