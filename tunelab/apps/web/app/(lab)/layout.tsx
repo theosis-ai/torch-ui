@@ -1,16 +1,17 @@
-import { ClerkProvider } from "@clerk/nextjs";
-import "./lab.css";
+import "@workspace/ui/styles/globals.css";
+import {
+  SidebarProvider,
+  SidebarInset,
+} from "@workspace/ui/components/sidebar";
+import { AppSidebar } from "@workspace/ui/components/sidebar/app-sidebar";
 
-export default function LabLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function LabLayout({ children }: { children: React.ReactNode }) {
   return (
-    <ClerkProvider>
-      <div >
-        {children}
-      </div>
-    </ClerkProvider>
+    <SidebarProvider>
+      <AppSidebar />
+      <SidebarInset className="ml-[18rem]">
+        <div>{children}</div>
+      </SidebarInset>
+    </SidebarProvider>
   );
 }
