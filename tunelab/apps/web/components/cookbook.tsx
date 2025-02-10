@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { getSectionPosts } from "@workspace/ui/lib/getPosts";
+import { getSectionPosts } from "@/lib/getPosts";
 
 function ArrowIcon() {
   return (

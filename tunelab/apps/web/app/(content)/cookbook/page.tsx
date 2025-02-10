@@ -1,4 +1,4 @@
-import { CookbookPosts } from "@workspace/ui/components/cookbook";
+import { CookbookPosts } from "@/components/cookbook";
 
 export default function Page() {
   return (

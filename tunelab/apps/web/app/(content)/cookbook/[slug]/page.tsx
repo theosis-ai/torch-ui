@@ -1,44 +1,48 @@
-import "@workspace/ui/styles/content.css";
-import { notFound } from "next/navigation";
-import { CustomMDX } from "@workspace/ui/components/mdx";
-import { getSectionPosts } from "@workspace/ui/lib/getPosts";
-import { baseUrl } from "../../sitemap";
+import { notFound } from 'next/navigation'
+import { CustomMDX } from '@/components/mdx'
+import { getSectionPosts } from '@/lib/getPosts'
+import { baseUrl } from '../../sitemap'
+
+const section = "cookbook"
+
+interface PageProps {
+  params: Promise<{
+    slug: string
+  }>
+}
 
 export async function generateStaticParams() {
-  const posts = getSectionPosts("cookbook");
+  const posts = getSectionPosts(section)
 
   return posts.map((post) => ({
     slug: post.slug,
-  }));
+  }))
 }
 
-export function generateMetadata({ params }: { params: { slug: string } }) {
-  const post = getSectionPosts("cookbook").find(
-    (post) => post.slug === params.slug,
-  );
+export async function generateMetadata({ params }: PageProps) {
+  const { slug } = await params
+  const post = getSectionPosts(section).find((post) => post.slug === slug)
   if (!post) {
-    return;
+    return {}
   }
 
   const {
     title,
     publishedAt: publishedTime,
     summary: description,
-    subtitle: subtitle,
     image,
-  } = post.metadata;
+  } = post.metadata
   const ogImage = image
     ? image
-    : `${baseUrl}/og?title=${encodeURIComponent(title)}`;
+    : `${baseUrl}/og?title=${encodeURIComponent(title)}`
 
   return {
     title,
     description,
     openGraph: {
       title,
-      subtitle,
       description,
-      type: "article",
+      type: 'article',
       publishedTime,
       url: `${baseUrl}/cookbook/${post.slug}`,
       images: [
@@ -48,22 +52,20 @@ export function generateMetadata({ params }: { params: { slug: string } }) {
       ],
     },
     twitter: {
-      card: "summary_large_image",
+      card: 'summary_large_image',
       title,
-      subtitle,
       description,
       images: [ogImage],
     },
-  };
+  }
 }
 
-export default function Blog({ params }: { params: { slug: string } }) {
-  const post = getSectionPosts("cookbook").find(
-    (post) => post.slug === params.slug,
-  );
+export default async function Blog({ params }: PageProps) { 
+  const { slug } = await params
+  const post = await getSectionPosts(section).find((post) => post.slug === slug)
 
   if (!post) {
-    notFound();
+    notFound()
   }
 
   return (
@@ -73,8 +75,8 @@ export default function Blog({ params }: { params: { slug: string } }) {
         suppressHydrationWarning
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "BlogPosting",
+            '@context': 'https://schema.org',
+            '@type': 'BlogPosting',
             headline: post.metadata.title,
             subtitle: post.metadata.subtitle,
             datePublished: post.metadata.publishedAt,
@@ -86,8 +88,8 @@ export default function Blog({ params }: { params: { slug: string } }) {
               : `/og?title=${encodeURIComponent(post.metadata.title)}`,
             url: `${baseUrl}/cookbook/${post.slug}`,
             author: {
-              "@type": "Person",
-              name: "Llama Cookbook",
+              '@type': 'Person',
+              name: 'PyTorch Cookbook',
             },
           }),
         }}
@@ -109,5 +111,5 @@ export default function Blog({ params }: { params: { slug: string } }) {
         <CustomMDX source={post.content} />
       </article>
     </section>
-  );
+  )
 }
