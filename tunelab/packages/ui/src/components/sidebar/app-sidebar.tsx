@@ -3,9 +3,9 @@ import {
   SidebarContent,
   SidebarHeader,
   SidebarGroup,
-} from "@/components/ui/sidebar"
+} from "@workspace/ui/components/sidebar"
 
-import { RecipeCombobox } from "@/components/sidebar/recipe-combobox"
+import { RecipeCombobox } from "@workspace/ui/components/sidebar/recipe-combobox"
 
 
 export function AppSidebar() {

@@ -1,5 +1,5 @@
-import { SidebarProvider, SidebarTrigger, SidebarInset } from "@/components/ui/sidebar";
-import { AppSidebar } from "@/components/sidebar/app-sidebar";
+import { SidebarProvider, SidebarTrigger, SidebarInset } from "@workspace/ui/components/sidebar";
+import { AppSidebar } from "@workspace/ui/components/sidebar/app-sidebar";
 
 export default function Page() {
   return (

@@ -1,30 +1,49 @@
-import { Geist, Geist_Mono } from "next/font/google"
+import "@workspace/ui/styles/globals.css";
+import type { Metadata } from "next";
+import { GeistSans } from "geist/font/sans";
+import { GeistMono } from "geist/font/mono";
+import { ClerkProvider } from "@clerk/nextjs";
+import { ThemeProvider } from "@workspace/ui/components/themeProvider";
+import Nav from "@workspace/ui/components/nav";
+import Footer from "@workspace/ui/components/footer";
 
-import "@workspace/ui/globals.css"
-import { Providers } from "@/components/providers"
+const baseUrl = "https://tunelab.theosis.ai";
 
-const fontSans = Geist({
-  subsets: ["latin"],
-  variable: "--font-sans",
-})
-
-const fontMono = Geist_Mono({
-  subsets: ["latin"],
-  variable: "--font-mono",
-})
+export const metadata: Metadata = {
+  metadataBase: new URL(baseUrl),
+  title: {
+    default: "Tune Lab",
+    template: "%s | Tune Lab",
+  },
+  description: "finetune llamas with torchtune",
+  openGraph: {
+    title: "Tune Lab",
+    description: "finetune llamas with torchtune",
+    url: baseUrl,
+    siteName: "Tune Lab",
+    locale: "en_US",
+    type: "website",
+  },
+};
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${fontSans.variable} ${fontMono.variable} font-sans antialiased `}
-      >
-        <Providers>{children}</Providers>
-      </body>
-    </html>
-  )
+    <ClerkProvider>
+      <html lang="en">
+        <body
+          className={`${GeistSans.variable} ${GeistMono.variable} antialiased min-h-screen flex flex-col`}
+        >
+          <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+            <Nav />
+            <main className="flex-grow">{children}</main>
+            <Footer />
+          </ThemeProvider>
+        </body>
+      </html>
+    </ClerkProvider>
+  );
 }

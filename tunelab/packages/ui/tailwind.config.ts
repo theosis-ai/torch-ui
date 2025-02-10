@@ -1,32 +1,39 @@
-import type { Config } from "tailwindcss"
-import tailwindcssAnimate from "tailwindcss-animate"
-import { fontFamily } from "tailwindcss/defaultTheme"
+import type { Config } from "tailwindcss";
 
-const config = {
-  darkMode: ["class"],
+const config: Config = {
+  darkMode: ["class", "dark"],
   content: [
-    "app/**/*.{ts,tsx}",
-    "components/**/*.{ts,tsx}",
-    "../../packages/ui/src/components/**/*.{ts,tsx}",
+    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
   	extend: {
-  		fontFamily: {
-  			sans: [
-  				'var(--font-sans)',
-                    ...fontFamily.sans
-                ],
-  			mono: [
-  				'var(--font-mono)',
-                    ...fontFamily.mono
-                ]
+  		keyframes: {
+  			'caret-blink': {
+  				'0%,70%,100%': {
+  					opacity: '1'
+  				},
+  				'20%,50%': {
+  					opacity: '0'
+  				}
+  			}
+  		},
+  		animation: {
+  			'caret-blink': 'caret-blink 1.25s ease-out infinite'
   		},
   		colors: {
-  			border: 'hsl(var(--border))',
-  			input: 'hsl(var(--input))',
-  			ring: 'hsl(var(--ring))',
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
+  			card: {
+  				DEFAULT: 'hsl(var(--card))',
+  				foreground: 'hsl(var(--card-foreground))'
+  			},
+  			popover: {
+  				DEFAULT: 'hsl(var(--popover))',
+  				foreground: 'hsl(var(--popover-foreground))'
+  			},
   			primary: {
   				DEFAULT: 'hsl(var(--primary))',
   				foreground: 'hsl(var(--primary-foreground))'
@@ -34,10 +41,6 @@ const config = {
   			secondary: {
   				DEFAULT: 'hsl(var(--secondary))',
   				foreground: 'hsl(var(--secondary-foreground))'
-  			},
-  			destructive: {
-  				DEFAULT: 'hsl(var(--destructive))',
-  				foreground: 'hsl(var(--destructive-foreground))'
   			},
   			muted: {
   				DEFAULT: 'hsl(var(--muted))',
@@ -47,13 +50,19 @@ const config = {
   				DEFAULT: 'hsl(var(--accent))',
   				foreground: 'hsl(var(--accent-foreground))'
   			},
-  			popover: {
-  				DEFAULT: 'hsl(var(--popover))',
-  				foreground: 'hsl(var(--popover-foreground))'
+  			destructive: {
+  				DEFAULT: 'hsl(var(--destructive))',
+  				foreground: 'hsl(var(--destructive-foreground))'
   			},
-  			card: {
-  				DEFAULT: 'hsl(var(--card))',
-  				foreground: 'hsl(var(--card-foreground))'
+  			border: 'hsl(var(--border))',
+  			input: 'hsl(var(--input))',
+  			ring: 'hsl(var(--ring))',
+  			chart: {
+  				'1': 'hsl(var(--chart-1))',
+  				'2': 'hsl(var(--chart-2))',
+  				'3': 'hsl(var(--chart-3))',
+  				'4': 'hsl(var(--chart-4))',
+  				'5': 'hsl(var(--chart-5))'
   			},
   			sidebar: {
   				DEFAULT: 'hsl(var(--sidebar-background))',
@@ -73,7 +82,6 @@ const config = {
   		}
   	}
   },
-  plugins: [tailwindcssAnimate],
-} satisfies Config
-
-export default config
+  plugins: [require("tailwindcss-animate")],
+};
+export default config;

@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 import { LogIn } from "lucide-react";
-import ModeSwitcher from "@/components/modeSwitcher";
+import ModeSwitcher from "@workspace/ui/components/modeSwitcher";
 
 export default function Nav() {
   const pathname = usePathname();
