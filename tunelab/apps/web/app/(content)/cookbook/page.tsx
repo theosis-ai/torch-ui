@@ -1,4 +1,4 @@
-import { Posts } from "@/components/posts";
+import { CookbookPosts } from "@/components/cookbook-posts";
 
 export default function Page() {
   return (
@@ -10,7 +10,7 @@ export default function Page() {
         {`Welcome to the Cookbook! Use this guide to learn how to tune, distill, and align Llama models with PyTorch native frameworks`}
       </p>
       <div className="my-8">
-        <Posts section="cookbook" />
+        <CookbookPosts section="cookbook" />
       </div>
     </section>
   );

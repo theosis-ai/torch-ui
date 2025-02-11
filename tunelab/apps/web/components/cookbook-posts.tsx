@@ -18,7 +18,7 @@ function ArrowIcon() {
   );
 }
 
-export function Posts({ section }: { section: string }) {
+export function CookbookPosts({ section }: { section: string }) {
   const allPosts = getSectionPosts(section);
 
   return (
@@ -34,7 +34,7 @@ export function Posts({ section }: { section: string }) {
           <Link
             key={post.slug}
             className="flex flex-col space-y-2 mb-4"
-            href={`/${section}/${post.slug}`}
+            href={`/cookbook/${post.slug}`}
           >
             <div className="flex flex-col items-center md:flex-row space-x-0 md:space-x-2">
               <ArrowIcon />
