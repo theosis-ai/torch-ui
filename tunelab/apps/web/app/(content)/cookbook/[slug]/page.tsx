@@ -1,27 +1,27 @@
-import { notFound } from 'next/navigation'
-import { CustomMDX } from '@/components/mdx'
-import { getCookbookPosts } from '@/lib/getCookbookPosts'
-import { baseUrl } from '../../sitemap'
+import { notFound } from "next/navigation";
+import { CustomMDX } from "@/components/mdx";
+import { getCookbookPosts } from "@/lib/getCookbookPosts";
+import { baseUrl } from "../../sitemap";
 
 interface PageProps {
   params: Promise<{
-    slug: string
-  }>
+    slug: string;
+  }>;
 }
 
 export async function generateStaticParams() {
-  const posts = getCookbookPosts()
+  const posts = getCookbookPosts();
 
   return posts.map((post) => ({
     slug: post.slug,
-  }))
+  }));
 }
 
 export async function generateMetadata({ params }: PageProps) {
-  const { slug } = await params
-  const post = getCookbookPosts().find((post) => post.slug === slug)
+  const { slug } = await params;
+  const post = getCookbookPosts().find((post) => post.slug === slug);
   if (!post) {
-    return {}
+    return {};
   }
 
   const {
@@ -29,10 +29,10 @@ export async function generateMetadata({ params }: PageProps) {
     publishedAt: publishedTime,
     summary: description,
     image,
-  } = post.metadata
+  } = post.metadata;
   const ogImage = image
     ? image
-    : `${baseUrl}/og?title=${encodeURIComponent(title)}`
+    : `${baseUrl}/og?title=${encodeURIComponent(title)}`;
 
   return {
     title,
@@ -40,7 +40,7 @@ export async function generateMetadata({ params }: PageProps) {
     openGraph: {
       title,
       description,
-      type: 'article',
+      type: "article",
       publishedTime,
       url: `${baseUrl}/cookbook/${post.slug}`,
       images: [
@@ -50,31 +50,31 @@ export async function generateMetadata({ params }: PageProps) {
       ],
     },
     twitter: {
-      card: 'summary_large_image',
+      card: "summary_large_image",
       title,
       description,
       images: [ogImage],
     },
-  }
+  };
 }
 
-export default async function Blog({ params }: PageProps) { 
-  const { slug } = await params
-  const post = getCookbookPosts().find((post) => post.slug === slug)
+export default async function Blog({ params }: PageProps) {
+  const { slug } = await params;
+  const post = getCookbookPosts().find((post) => post.slug === slug);
 
   if (!post) {
-    notFound()
+    notFound();
   }
 
   return (
-    <section className='mx-auto w-full max-w-xl overflow-y-hidden'>
+    <section className="mx-auto w-full max-w-xl overflow-y-hidden">
       <script
         type="application/ld+json"
         suppressHydrationWarning
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'BlogPosting',
+            "@context": "https://schema.org",
+            "@type": "BlogPosting",
             headline: post.metadata.title,
             subtitle: post.metadata.subtitle,
             datePublished: post.metadata.publishedAt,
@@ -86,8 +86,8 @@ export default async function Blog({ params }: PageProps) {
               : `/og?title=${encodeURIComponent(post.metadata.title)}`,
             url: `${baseUrl}/cookbook/${post.slug}`,
             author: {
-              '@type': 'Person',
-              name: 'jxtngx',
+              "@type": "Person",
+              name: "jxtngx",
             },
           }),
         }}
@@ -109,5 +109,5 @@ export default async function Blog({ params }: PageProps) {
         <CustomMDX source={post.content} />
       </article>
     </section>
-  )
+  );
 }

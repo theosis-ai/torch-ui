@@ -1,6 +1,5 @@
-import { getBlogPosts } from "@/lib/getBlogPosts"
-import { getCookbookPosts } from "@/lib/getCookbookPosts"
-
+import { getBlogPosts } from "@/lib/getBlogPosts";
+import { getCookbookPosts } from "@/lib/getCookbookPosts";
 
 export const baseUrl = "https://tunelab.theosis.ai";
 
@@ -23,10 +22,5 @@ export default async function sitemap() {
     lastModified: new Date().toISOString().split("T")[0],
   }));
 
-  return [
-    ...blog_routes,
-    ...blog_posts,
-    ...cookbook_routes,
-    ...cookbook_posts,
-  ];
+  return [...blog_routes, ...blog_posts, ...cookbook_routes, ...cookbook_posts];
 }
