@@ -3,7 +3,7 @@ import { CustomMDX } from '@/components/mdx'
 import { getSectionPosts } from '@/lib/getPosts'
 import { baseUrl } from '../../sitemap'
 
-const section = "cookbook"
+const section = "blog"
 
 interface PageProps {
   params: Promise<{
@@ -94,7 +94,7 @@ export default async function Blog({ params }: PageProps) {
           }),
         }}
       />
-      <h1 className="title font-semibold text-2xl tracking-tighter ">
+      <h1 className="title font-semibold text-2xl tracking-tighter">
         {post.metadata.title}
       </h1>
       <div className="flex justify-between items-center mt-2 mb-8 text-sm">

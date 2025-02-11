@@ -18,8 +18,8 @@ function ArrowIcon() {
   );
 }
 
-export function CookbookPosts() {
-  const allPosts = getSectionPosts("cookbook");
+export function Posts({ section }: { section: string }) {
+  const allPosts = getSectionPosts(section);
 
   return (
     <div>
@@ -34,19 +34,13 @@ export function CookbookPosts() {
           <Link
             key={post.slug}
             className="flex flex-col space-y-2 mb-4"
-            href={`/cookbook/${post.slug}`}
+            href={`/${section}/${post.slug}`}
           >
             <div className="flex flex-col items-center md:flex-row space-x-0 md:space-x-2">
-              {/* <p className="text-neutral-600 dark:text-neutral-400 w-[25px]">
-                {post.metadata.position}
-              </p> */}
               <ArrowIcon />
               <hr></hr>
               <p className="w-[150px]">{post.metadata.title}</p>
               <p className="w-[300px] tabular-nums">{post.metadata.subtitle}</p>
-              {/* <p className="text-neutral-600 dark:text-neutral-400 w-[200px] tabular-nums">
-                {formatDate(post.metadata.publishedAt, false)}
-              </p> */}
             </div>
           </Link>
         ))}
