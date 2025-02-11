@@ -4,7 +4,7 @@ export const baseUrl = "https://tunelab.theosis.ai";
 
 export default async function sitemap() {
   const blog_posts = getSectionPosts("blog").map((post) => ({
-    url: `${baseUrl}/cookbook/${post.slug}`,
+    url: `${baseUrl}/blog/${post.slug}`,
     lastModified: post.metadata.publishedAt,
   }));
   const blog_routes = ["", "/blog"].map((route) => ({
