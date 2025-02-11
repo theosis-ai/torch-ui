@@ -44,7 +44,7 @@ export async function generateMetadata({ params }: PageProps) {
       description,
       type: 'article',
       publishedTime,
-      url: `${baseUrl}/${section}/${post.slug}`,
+      url: `${baseUrl}/blog/${post.slug}`,
       images: [
         {
           url: ogImage,
@@ -86,7 +86,7 @@ export default async function Blog({ params }: PageProps) {
             image: post.metadata.image
               ? `${baseUrl}${post.metadata.image}`
               : `/og?title=${encodeURIComponent(post.metadata.title)}`,
-            url: `${baseUrl}/${section}/${post.slug}`,
+            url: `${baseUrl}/blog/${post.slug}`,
             author: {
               '@type': 'Person',
               name: 'jxtngx',

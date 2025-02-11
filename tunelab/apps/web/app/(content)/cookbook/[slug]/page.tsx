@@ -44,7 +44,7 @@ export async function generateMetadata({ params }: PageProps) {
       description,
       type: 'article',
       publishedTime,
-      url: `${baseUrl}/${section}/${post.slug}`,
+      url: `${baseUrl}/cookbook/${post.slug}`,
       images: [
         {
           url: ogImage,
@@ -62,7 +62,7 @@ export async function generateMetadata({ params }: PageProps) {
 
 export default async function Blog({ params }: PageProps) { 
   const { slug } = await params
-  const post = await getSectionPosts(section).find((post) => post.slug === slug)
+  const post = getSectionPosts(section).find((post) => post.slug === slug)
 
   if (!post) {
     notFound()
@@ -86,7 +86,7 @@ export default async function Blog({ params }: PageProps) {
             image: post.metadata.image
               ? `${baseUrl}${post.metadata.image}`
               : `/og?title=${encodeURIComponent(post.metadata.title)}`,
-            url: `${baseUrl}/${section}/${post.slug}`,
+            url: `${baseUrl}/cookbook/${post.slug}`,
             author: {
               '@type': 'Person',
               name: 'jxtngx',
