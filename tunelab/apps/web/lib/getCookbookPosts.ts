@@ -56,7 +56,7 @@ function getMDXData(dir: string) {
   });
 }
 
-export function getPosts() {
+export function getCookbookPosts() {
   return getMDXData(
     path.join(process.cwd(), "app", "(content)", "cookbook", "posts"),
   );

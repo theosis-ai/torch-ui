@@ -1,9 +1,11 @@
-import { getSectionPosts } from "@/lib/getPosts";
+import { getBlogPosts } from "@/lib/getBlogPosts"
+import { getCookbookPosts } from "@/lib/getCookbookPosts"
+
 
 export const baseUrl = "https://tunelab.theosis.ai";
 
 export default async function sitemap() {
-  const blog_posts = getSectionPosts("blog").map((post) => ({
+  const blog_posts = getBlogPosts().map((post) => ({
     url: `${baseUrl}/blog/${post.slug}`,
     lastModified: post.metadata.publishedAt,
   }));
@@ -12,7 +14,7 @@ export default async function sitemap() {
     lastModified: new Date().toISOString().split("T")[0],
   }));
 
-  const cookbook_posts = getSectionPosts("cookbook").map((post) => ({
+  const cookbook_posts = getCookbookPosts().map((post) => ({
     url: `${baseUrl}/cookbook/${post.slug}`,
     lastModified: post.metadata.publishedAt,
   }));

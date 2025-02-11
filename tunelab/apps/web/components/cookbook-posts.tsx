@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { getPosts } from "@/lib/getCookbookPosts";
+import { getCookbookPosts } from "@/lib/getCookbookPosts";
 
 function ArrowIcon() {
   return (
@@ -19,7 +19,7 @@ function ArrowIcon() {
 }
 
 export function CookbookPosts() {
-  const allPosts = getPosts();
+  const allPosts = getCookbookPosts();
 
   return (
     <div>

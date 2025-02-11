@@ -1,9 +1,7 @@
 import { notFound } from 'next/navigation'
 import { CustomMDX } from '@/components/mdx'
-import { getPosts } from '@/lib/getCookbookPosts'
+import { getCookbookPosts } from '@/lib/getCookbookPosts'
 import { baseUrl } from '../../sitemap'
-
-const section = "cookbook"
 
 interface PageProps {
   params: Promise<{
@@ -12,7 +10,7 @@ interface PageProps {
 }
 
 export async function generateStaticParams() {
-  const posts = getPosts()
+  const posts = getCookbookPosts()
 
   return posts.map((post) => ({
     slug: post.slug,
@@ -21,7 +19,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: PageProps) {
   const { slug } = await params
-  const post = getPosts().find((post) => post.slug === slug)
+  const post = getCookbookPosts().find((post) => post.slug === slug)
   if (!post) {
     return {}
   }
@@ -62,7 +60,7 @@ export async function generateMetadata({ params }: PageProps) {
 
 export default async function Blog({ params }: PageProps) { 
   const { slug } = await params
-  const post = getPosts().find((post) => post.slug === slug)
+  const post = getCookbookPosts().find((post) => post.slug === slug)
 
   if (!post) {
     notFound()
