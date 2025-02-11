@@ -56,9 +56,9 @@ function getMDXData(dir: string) {
   });
 }
 
-export function getSectionPosts(section: string) {
+export function getPosts() {
   return getMDXData(
-    path.join(process.cwd(), "app", "(content)", section, "posts"),
+    path.join(process.cwd(), "app", "(content)", "blog", "posts"),
   );
 }
 

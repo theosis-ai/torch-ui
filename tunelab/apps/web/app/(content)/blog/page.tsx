@@ -10,7 +10,7 @@ export default function Page() {
         {`Welcome to the Blog! Read on for release notes and roadmap plans.`}
       </p>
       <div className="my-8">
-        <BlogPosts section="blog" />
+        <BlogPosts />
       </div>
     </section>
   );

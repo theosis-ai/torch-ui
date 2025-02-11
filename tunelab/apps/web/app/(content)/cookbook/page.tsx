@@ -10,7 +10,7 @@ export default function Page() {
         {`Welcome to the Cookbook! Use this guide to learn how to tune, distill, and align Llama models with PyTorch native frameworks`}
       </p>
       <div className="my-8">
-        <CookbookPosts section="cookbook" />
+        <CookbookPosts />
       </div>
     </section>
   );
