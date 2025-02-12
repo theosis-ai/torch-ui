@@ -24,9 +24,6 @@ Clone the repo and:
 > [!WARNING]
 > the purpose of the Clerk auth wall is to gate access to GPU resources
 
-> [!NOTE]
-> to reduce the amount of accounts needed to use Tune Lab and Llama Lab, future versions will use Auth.js + Neon for authentication and authorization
-
 ## Structure
 
 - [tuneapi/](./tuneapi): FastAPI and compute backend
