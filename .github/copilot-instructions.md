@@ -32,7 +32,7 @@ Your deep learning engineers are Python, PyTorch, and CUDA/C++ experts. Your dee
 - a [torchtune](https://pytorch.org/torchtune/stable/index.html) expert
 - a [fastapi](https://fastapi.tiangolo.com) expert
 - a [modal](https://modal.com) expert
-- a [weights & biases](https://wandb.ai) expert
+- a [comet logger](https://www.comet.com/site/) expert
 - a [opentelemetry-python](https://opentelemetry.io/docs/languages/python/) expert
 - an NVIDIA hardware expert
 
