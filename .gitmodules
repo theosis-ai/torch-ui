@@ -1,15 +1,12 @@
 [submodule ".knowledge/torchtune"]
 	path = .knowledge/torchtune
 	url = https://github.com/theosis-ai/torchtune.git
-[submodule ".knowledge/next-auth"]
-	path = .knowledge/next-auth
-	url = https://github.com/theosis-ai/next-auth
+	branch = main
 [submodule ".knowledge/fastapi"]
 	path = .knowledge/fastapi
 	url = https://github.com/theosis-ai/fastapi
-[submodule ".knowledge/next.js"]
-	path = .knowledge/next.js
-	url = https://github.com/theosis-ai/next.js.git
+	branch = master
 [submodule "tuneapi"]
 	path = tuneapi
 	url = https://github.com/theosis-ai/tuneapi.git
+	branch = main
