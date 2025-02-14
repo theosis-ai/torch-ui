@@ -10,3 +10,6 @@
 [submodule ".knowledge/next.js"]
 	path = .knowledge/next.js
 	url = https://github.com/theosis-ai/next.js.git
+[submodule "tuneapi"]
+	path = tuneapi
+	url = https://github.com/theosis-ai/tuneapi.git
