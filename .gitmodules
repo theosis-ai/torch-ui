@@ -10,9 +10,3 @@
 [submodule ".knowledge/next.js"]
 	path = .knowledge/next.js
 	url = https://github.com/theosis-ai/next.js.git
-[submodule ".wiki"]
-	path = .wiki
-	url = https://github.com/theosis-ai/tune-lab.wiki.git
-[submodule ".knowledge/wiki"]
-	path = .knowledge/wiki
-	url = https://github.com/theosis-ai/tune-lab.wiki.git
