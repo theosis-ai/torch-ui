@@ -10,3 +10,7 @@
 	path = tuneapi
 	url = https://github.com/theosis-ai/tuneapi.git
 	branch = main
+[submodule ".knowledge/brev-cli"]
+	path = .knowledge/brev-cli
+	url = https://github.com/theosis-ai/brev-cli.git
+	branch = main
