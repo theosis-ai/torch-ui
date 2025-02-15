@@ -2,7 +2,6 @@ import "@workspace/ui/styles/globals.css";
 import type { Metadata } from "next";
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
-import { ClerkProvider } from "@clerk/nextjs";
 import { ThemeProvider } from "@workspace/ui/components/themeProvider";
 import Nav from "@workspace/ui/components/nav";
 import Footer from "@workspace/ui/components/footer";
@@ -32,7 +31,6 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider>
       <html lang="en">
         <body
           className={`${GeistSans.variable} ${GeistMono.variable} antialiased min-h-screen flex flex-col`}
@@ -44,6 +42,5 @@ export default function RootLayout({
           </ThemeProvider>
         </body>
       </html>
-    </ClerkProvider>
   );
 }

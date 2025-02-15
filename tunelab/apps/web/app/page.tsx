@@ -1,5 +1,4 @@
 import { Icons } from "@workspace/ui/components/icons";
-import { ExternalLink } from "lucide-react";
 import Link from "next/link";
 
 export default function Home() {
