@@ -11,18 +11,19 @@ Tune Lab is a [FastAPI](https://fastapi.tiangolo.com) + [NextJS](https://nextjs.
 > [!NOTE]
 > Tune Lab is a portfolio project of [jxtngx](https://github.com/jxtngx)
 
-## Intended Use
+## Intendedd Use
 
-Clone the repo and:
+Tune Lab is intended to be cloned and deployed in some variation of self-hosted – whether that be on a local machine, a private cloud, or a managed cloud service. 
 
-- choose a local or Vercel hosted deployment
-- create an account on [Clerk](https://clerk.com)
-- create a Clerk application, and update the local .env or production environment in Vercel
-- create a Discord server application key, and update the local .env or production environment in Vercel
-- select a compute provider backend or implement a custom compute backend, and update the local .env or production environment in Vercel
+> [!IMPORTANT]
+> Access to NVIDIA GPUs is required regardless of deployment method
 
-> [!WARNING]
-> the purpose of the Clerk auth wall is to gate access to GPU resources
+
+## Features
+
+- a RESTful API for managing and tuning models with torchtune
+- a NextJS web interface for managing and tuning models
+- gated access to the API and web interface with AuthJS and Neon
 
 ## Structure
 
