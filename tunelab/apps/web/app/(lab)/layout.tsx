@@ -9,7 +9,7 @@ export default function LabLayout({ children }: { children: React.ReactNode }) {
   return (
     <SidebarProvider>
       <AppSidebar />
-      <SidebarInset className="ml-[18rem]">
+      <SidebarInset className="ml-[34rem]">
         <div>{children}</div>
       </SidebarInset>
     </SidebarProvider>
