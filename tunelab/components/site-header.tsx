@@ -16,7 +16,7 @@ export function SiteHeader() {
           <MainNav />
           <MobileNav />
           <div className="flex flex-1 justify-end">
-            <div className="w-full flex-1 md:w-auto md:flex-none">
+            <div className="w-full flex-1 md:w-auto md:flex-none mr-2">
               <CommandMenu />
             </div>
             <nav className="flex items-center gap-0.5">
