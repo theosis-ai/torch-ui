@@ -14,7 +14,7 @@ import {
   SidebarTrigger,
 } from "@/components/ui/sidebar"
 import Link from "next/link"
-import { ExternalLink } from "lucide-react"
+import { ExternalLink, Home } from "lucide-react"
 
 export default function Page() {
   return (
@@ -46,8 +46,14 @@ export default function Page() {
         <div className="flex flex-1 flex-col gap-4 p-4 pt-0">
           <div className="bg-muted/50 min-h-[100vh] flex-1 rounded-xl md:min-h-min flex flex-col items-center justify-center">
           <Link 
+          href="/"
+          className="flex gap-2 items-center mb-20"
+          >
+            {`tunelab home`} <Home className="h-4 w-4"/>
+          </Link>
+          <Link 
           href="https://ui.shadcn.com/view/styles/new-york/sidebar-07"
-          className="underline flex gap-2 items-center"
+          className="flex gap-2 items-center"
           target="_blank"
           >
             {`created from shadcn/ui sidebar 07 template`} <ExternalLink className="h-4 w-4"/>
