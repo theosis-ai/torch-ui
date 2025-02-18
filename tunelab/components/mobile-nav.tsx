@@ -12,7 +12,7 @@ import {
   Drawer,
   DrawerContent,
   DrawerTrigger,
-} from "@/components/ui/drawer"
+} from "@/components/drawer"
 
 export function MobileNav() {
   const [open, setOpen] = React.useState(false)
