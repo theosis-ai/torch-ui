@@ -32,12 +32,12 @@ export default function Page() {
               <BreadcrumbList>
                 <BreadcrumbItem className="hidden md:block">
                   <BreadcrumbLink href="#">
-                    tune llama models
+                    torchtune
                   </BreadcrumbLink>
                 </BreadcrumbItem>
                 <BreadcrumbSeparator className="hidden md:block" />
                 <BreadcrumbItem>
-                  <BreadcrumbPage>torchtune</BreadcrumbPage>
+                  <BreadcrumbPage>tune llama 3.2 1B </BreadcrumbPage>
                 </BreadcrumbItem>
               </BreadcrumbList>
             </Breadcrumb>
@@ -50,13 +50,6 @@ export default function Page() {
           className="flex gap-2 items-center mb-20"
           >
             {`tunelab home`} <Home className="h-4 w-4"/>
-          </Link>
-          <Link 
-          href="https://ui.shadcn.com/view/styles/new-york/sidebar-07"
-          className="flex gap-2 items-center"
-          target="_blank"
-          >
-            {`created from shadcn/ui sidebar 07 template`} <ExternalLink className="h-4 w-4"/>
           </Link>
           </div>
         </div>

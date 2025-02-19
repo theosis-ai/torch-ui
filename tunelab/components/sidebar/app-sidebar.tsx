@@ -2,24 +2,24 @@
 
 import * as React from "react"
 import {
-  AudioWaveform,
+  AppWindowMac,
   Binary,
   Bolt,
-  BookOpen,
   Bot,
-  Command,
+  Cpu,
   Fullscreen,
-  GalleryVerticalEnd,
+  FileText,
   PieChart,
-  Settings2,
   SquareTerminal,
-  MessageCircleCode
+  Layers,
+  MessageSquareCode,
+  MessageSquareReply
 } from "lucide-react"
 
 import { NavMain } from "@/components/sidebar/nav-main"
 import { NavRecipes } from "@/components/sidebar/nav-recipes"
+import { NavDatasets } from "@/components/sidebar/nav-datasets"
 import { NavUser } from "@/components/sidebar/nav-user"
-import { ToolSwitcher } from "@/components/sidebar/tool-switcher"
 import {
   Sidebar,
   SidebarContent,
@@ -27,6 +27,10 @@ import {
   SidebarHeader,
   SidebarRail,
 } from "@/components/ui/sidebar"
+import {
+  SidebarMenuButton
+} from "@/components/ui/sidebar"
+import App from "next/app"
 
 // This is sample data.
 const data = {
@@ -35,28 +39,18 @@ const data = {
     email: "m@example.com",
     avatar: "https://avatars.githubusercontent.com/u/26209687",
   },
-  tools: [
+  tool: 
     {
-      name: "Acme Inc",
-      logo: GalleryVerticalEnd,
+      name: "Tune Lab",
+      logo: AppWindowMac,
       plan: "Enterprise",
     },
-    {
-      name: "Acme Corp.",
-      logo: AudioWaveform,
-      plan: "Startup",
-    },
-    {
-      name: "Evil Corp.",
-      logo: Command,
-      plan: "Free",
-    },
-  ],
   navMain: [
     {
       title: "Models",
       url: "#",
-      icon: Bot,
+      icon: Cpu,
+      isActive: true,
       items: [
         {
           title: "Llama 3.1",
@@ -73,36 +67,13 @@ const data = {
       ],
     },
     {
-      title: "Configs",
-      url: "#",
-      icon: Settings2,
-      items: [
-        {
-          title: "Llama 3.1",
-          url: "#",
-        },
-        {
-          title: "Llama 3.2",
-          url: "#",
-        },
-        {
-          title: "Llama 3.2 Vision",
-          url: "#",
-        },
-        {
-          title: "llama 3.3",
-          url: "#",
-        },
-      ],
-    },
-    {
       title: "Runs",
       url: "#",
       icon: SquareTerminal,
-      isActive: true,
+      isActive: false,
       items: [
         {
-          title: "History",
+          title: "Logs",
           url: "#",
         },
       ],
@@ -132,20 +103,61 @@ const data = {
     {
       name: "RLHF",
       url: "#",
-      icon: MessageCircleCode,
+      icon: MessageSquareCode,
+    },
+  ],
+  datasets: [
+    {
+      name: "Chat",
+      url: "#",
+      icon: Bot,
+    },
+    {
+      name: "Instruct",
+      url: "#",
+      icon: MessageSquareReply,
+    },
+    {
+      name: "Multimodal",
+      url: "#",
+      icon: Layers,
+    },
+    {
+      name: "Preference",
+      url: "#",
+      icon: Bolt,
+    },
+    {
+      name: "Text completion",
+      url: "#",
+      icon: FileText,
     },
   ],
 }
+
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
     <Sidebar variant="floating" collapsible="icon" {...props}>
       <SidebarHeader>
-        <ToolSwitcher tools={data.tools} />
+      <SidebarMenuButton
+              size="lg"
+              className="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground"
+            >
+              <div className="bg-sidebar-primary text-sidebar-primary-foreground flex aspect-square size-8 items-center justify-center rounded-lg">
+                <data.tool.logo className="size-4" />
+              </div>
+              <div className="grid flex-1 text-left text-sm leading-tight">
+                <span className="truncate font-semibold">
+                  {data.tool.name}
+                </span>
+              </div>
+            </SidebarMenuButton>
       </SidebarHeader>
       <SidebarContent>
         <NavMain items={data.navMain} />
         <NavRecipes recipes={data.recipes} />
+        <NavDatasets datasets={data.datasets} />
       </SidebarContent>
       <SidebarFooter>
         <NavUser user={data.user} />

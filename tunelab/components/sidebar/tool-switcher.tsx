@@ -71,7 +71,7 @@ export function ToolSwitcher({
                   <tool.logo className="size-4 shrink-0" />
                 </div>
                 {tool.name}
-                <DropdownMenuShortcut>⌘{index + 1}</DropdownMenuShortcut>
+                {/* <DropdownMenuShortcut>⌘{index + 1}</DropdownMenuShortcut> */}
               </DropdownMenuItem>
             ))}
           </DropdownMenuContent>
