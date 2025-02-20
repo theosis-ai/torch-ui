@@ -47,21 +47,41 @@ const data = {
     },
   navMain: [
     {
-      title: "Models",
+      title: "Llamas",
       url: "#",
       icon: Cpu,
       isActive: true,
       items: [
         {
-          title: "Llama 3.1",
+          title: "3.1 8B Instruct",
           url: "#",
         },
         {
-          title: "Llama 3.2",
+          title: "3.1 70B Instruct",
           url: "#",
         },
         {
-          title: "Llama 3.3",
+          title: "3.1 8B Instruct",
+          url: "#",
+        },
+        {
+          title: "3.2 1B Instruct",
+          url: "#",
+        },
+        {
+          title: "3.2 3B Instruct",
+          url: "#",
+        },
+        {
+          title: "3.2 11B V. Instruct",
+          url: "#",
+        },
+        {
+          title: "3.2 90B V. Instruct",
+          url: "#",
+        },
+        {
+          title: "3.3 70B Instruct",
           url: "#",
         },
       ],
@@ -72,6 +92,10 @@ const data = {
       icon: SquareTerminal,
       isActive: false,
       items: [
+        {
+          title: "Launch",
+          url: "#",
+        },
         {
           title: "Logs",
           url: "#",
