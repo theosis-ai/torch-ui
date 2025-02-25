@@ -6,14 +6,14 @@ Tune Lab is a [FastAPI](https://fastapi.tiangolo.com) + [NextJS](https://nextjs.
 > Tune Lab is in active development and is not yet ready for use
 
 > [!IMPORTANT]
-> Tune Lab will be built alongside [Copilot](https://github.com/features/copilot) and [Copilot Workspace](https://githubnext.com/projects/copilot-workspace), and is currently closed for contributions
+> Tune Lab will be built alongside [Copilot](https://github.com/features/copilot) and [Copilot Workspace](https://githubnext.com/projects/copilot-workspace), and is closed for contributions
 
 > [!NOTE]
 > Tune Lab is a portfolio project of [jxtngx](https://github.com/jxtngx)
 
 ## Intended Use
 
-Tune Lab is intended to be cloned and deployed in some variation of self-hosted – whether that be on a local machine, a private cloud, or a managed cloud service. 
+Tune Lab is intended to be cloned and used locally, on a private cloud, or a managed cloud service. 
 
 > [!IMPORTANT]
 > Access to NVIDIA GPUs is required regardless of deployment method
@@ -23,7 +23,11 @@ Tune Lab is intended to be cloned and deployed in some variation of self-hosted 
 
 - a RESTful API for managing and tuning models with torchtune
 - a NextJS web interface for managing and tuning models
-- gated access to the API and web interface with AuthJS and Neon
+
+### Basic Roadmap
+
+- gated access to the API and web interface with Supabase
+- examples for different compute provider backends
 
 ## Structure
 
