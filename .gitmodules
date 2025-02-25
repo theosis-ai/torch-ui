@@ -6,7 +6,7 @@
 	path = .knowledge/fastapi
 	url = https://github.com/theosis-ai/fastapi
 	branch = master
-[submodule "tuneapi"]
-	path = tuneapi
+[submodule "api"]
+	path = api
 	url = https://github.com/theosis-ai/tuneapi.git
 	branch = main
