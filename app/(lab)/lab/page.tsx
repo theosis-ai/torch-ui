@@ -14,7 +14,7 @@ import {
   SidebarTrigger,
 } from "@/components/ui/sidebar"
 import Link from "next/link"
-import { ExternalLink, Home } from "lucide-react"
+import { Home } from "lucide-react"
 
 export default function Page() {
   return (
