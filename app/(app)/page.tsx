@@ -13,7 +13,7 @@ export default function Home() {
       </Link>
       <h1 className="text-4xl font-medium tracking-wider mb-2">Tune Lab</h1>
       <p className="font-sans tracking-wider mb-12">
-        A Next.js application for Meta's TorchTune
+        A Next.js application for Meta&apos;s TorchTune
       </p>
     </div>
   );

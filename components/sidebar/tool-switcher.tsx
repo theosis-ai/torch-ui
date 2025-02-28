@@ -1,15 +1,13 @@
 "use client"
 
 import * as React from "react"
-import { ChevronsUpDown, Plus } from "lucide-react"
+import { ChevronsUpDown } from "lucide-react"
 
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuShortcut,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import {
@@ -61,7 +59,7 @@ export function ToolSwitcher({
             <DropdownMenuLabel className="text-muted-foreground text-xs">
               Tools
             </DropdownMenuLabel>
-            {tools.map((tool, index) => (
+            {tools.map((tool) => (
               <DropdownMenuItem
                 key={tool.name}
                 onClick={() => setActiveTeam(tool)}

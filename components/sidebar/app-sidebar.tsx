@@ -30,7 +30,6 @@ import {
 import {
   SidebarMenuButton
 } from "@/components/ui/sidebar"
-import App from "next/app"
 
 // This is sample data.
 const data = {
